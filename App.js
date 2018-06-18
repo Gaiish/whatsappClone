@@ -8,16 +8,21 @@ import {StyleSheet} from 'react-native'
 import CustomVariables from './native-base-theme/variables'
 import getTheme from './native-base-theme/components'
 
+import Chats from './src/components/chats'
+
 export default class App extends Component{
   render(){
     return(
       <StyleProvider style={getTheme(CustomVariables)}>
         <Container>
-          <Header hasTabs>
+          <Header hasTabs androidStatusBarColor='#054E47'>
             <Left>
               <Title>WhatsApp</Title>
             </Left>
             <Right>
+              <Button transparent>
+                <Icon name='search' style={{fontSize: 20}} />
+              </Button>
               <Button transparent>
                 <Icon name='md-more' />
               </Button>
@@ -32,7 +37,7 @@ export default class App extends Component{
               <Text>dope</Text>
             </Tab>
             <Tab heading='CHATS'>
-              <Text>dope</Text>
+              <Chats />
             </Tab>
             <Tab heading='STATUS'>
               <Text>dope</Text>
